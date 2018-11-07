@@ -50,40 +50,43 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="0.96686268849906631" blue="0.75938009951241192" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="FzY-ft-h27">
-                            <size key="itemSize" width="50" height="50"/>
+                            <size key="itemSize" width="200" height="250"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="artIdentifier" id="IX7-fV-Bss" customClass="ArtCell" customModule="CreativityProject" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                <rect key="frame" x="87.5" y="0.0" width="200" height="250"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="200" height="250"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lrl-uB-jse">
-                                            <rect key="frame" x="29" y="40" width="42" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lrl-uB-jse">
+                                            <rect key="frame" x="0.0" y="200" width="200.00000000000006" height="50.000000000000028"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NNS-je-MQC">
-                                            <rect key="frame" x="-4" y="25" width="108" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                         </imageView>
                                     </subviews>
                                 </view>
                                 <color key="backgroundColor" red="0.79804628147427725" green="0.89916526205896297" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="NNS-je-MQC" firstAttribute="top" secondItem="IX7-fV-Bss" secondAttribute="topMargin" constant="5" id="4F2-Oc-Lvf"/>
+                                    <constraint firstItem="NNS-je-MQC" firstAttribute="top" secondItem="IX7-fV-Bss" secondAttribute="topMargin" id="4F2-Oc-Lvf"/>
                                     <constraint firstItem="NNS-je-MQC" firstAttribute="centerX" secondItem="lrl-uB-jse" secondAttribute="centerX" id="6v7-Qi-TEL"/>
                                     <constraint firstItem="lrl-uB-jse" firstAttribute="centerY" secondItem="IX7-fV-Bss" secondAttribute="centerY" id="OTE-ru-YVI"/>
                                     <constraint firstItem="NNS-je-MQC" firstAttribute="centerY" secondItem="lrl-uB-jse" secondAttribute="centerY" id="Rpq-8z-HF9"/>
                                     <constraint firstItem="NNS-je-MQC" firstAttribute="centerX" secondItem="IX7-fV-Bss" secondAttribute="centerX" id="ab7-qd-tEw"/>
                                     <constraint firstItem="NNS-je-MQC" firstAttribute="leading" secondItem="IX7-fV-Bss" secondAttribute="leadingMargin" constant="-20" id="fnc-Ku-6Le"/>
                                 </constraints>
-                                <size key="customSize" width="100" height="100"/>
+                                <connections>
+                                    <outlet property="artImage" destination="NNS-je-MQC" id="PG0-29-ALu"/>
+                                    <outlet property="artLabel" destination="lrl-uB-jse" id="XxH-zw-Ns1"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
