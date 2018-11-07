@@ -13,7 +13,41 @@ private let reuseIdentifier = "artIdentifier"
 public class ArtCollectionViewCollection: UICollectionViewController
 {
 
-    override func viewDidLoad() -> Void
+    //MARK: Data members for Creativity Screen
+    
+    private let UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right 20.0)
+    private let itemsPerRowCompact : CGFloat = 4
+    private let itemsPerRowNormal : CGFloat = 6
+    
+    private lazy let creativeCS : [UIImage?] =
+    {
+        return [
+            UIImage(named: "BlueMarble"),
+            UIImage(named: "GaiaColossus"),
+            UIImage(named: "haikuArtIBM"),
+            UIImage(named: "haikuArtJava"),
+            UIImage(named: "haikuArtSwift"),
+            UIImage(named: "KanagawaWave"),
+            UIImage(named: "SpencerBillingsOctocat"),
+            UIImage(named: "swiftAppArt")
+        ]
+    }()
+    
+    private let labels : [String] =
+    {
+        return [
+            "artEarth",
+            "artColossus",
+            "artHaikuIBM",
+            "artHaikuJava",
+            "artHaikuSwift",
+            "artKanaWave",
+            "artOctocat",
+            "artSwiftArt"
+        ]
+    }()
+    
+    public override func viewDidLoad() -> Void
     {
         super.viewDidLoad()
 
@@ -25,21 +59,33 @@ public class ArtCollectionViewCollection: UICollectionViewController
 
         // Do any additional setup after loading the view.
     }
+    
+    /*
+    // MARK: - Navigation
 
-    override func numberOfSections(in collectionView: UICollectionView) -> Int
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using [segue destinationViewController].
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+    // MARK: UICollectionViewDataSource
+
+    public override func numberOfSections(in collectionView: UICollectionView) -> Int
     {
         // #warning Incomplete implementation, return the number of sections
         return 0
     }
 
 
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+    public override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
         // #warning Incomplete implementation, return the number of items
         return 0
     }
 
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    public override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
     
