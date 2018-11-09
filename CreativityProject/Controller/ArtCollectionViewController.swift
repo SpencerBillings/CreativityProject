@@ -28,6 +28,7 @@ public class ArtCollectionViewController: UICollectionViewController
             UIImage(named: "haikuArtJava"),
             UIImage(named: "haikuArtSwift"),
             UIImage(named: "KanagawaWave"),
+            UIImage(named: "MedicalDeviceHacking"),
             UIImage(named: "SpencerBillingsOctocat"),
             UIImage(named: "swiftAppArt")
         ]
@@ -42,6 +43,7 @@ public class ArtCollectionViewController: UICollectionViewController
             "artHaikuJava",
             "artHaikuSwift",
             "artKanaWave",
+            "artMedHacking",
             "artOctocat",
             "artSwiftArt"
         ]
@@ -55,9 +57,6 @@ public class ArtCollectionViewController: UICollectionViewController
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
     }
@@ -76,24 +75,23 @@ public class ArtCollectionViewController: UICollectionViewController
 
     public override func numberOfSections(in collectionView: UICollectionView) -> Int
     {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
-
     public override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
-        // #warning Incomplete implementation, return the number of items
         return creativeCS.count
     }
 
     public override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let artCell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ArtCell
+        
+        artCell.backgroundColor = .magenta
+        artCell.artImage.image = creativeCS[indexPath.row]
+        artCell.artLabel.text = labels[indexPath.row]
     
-        // Configure the cell
-    
-        return cell
+        return artCell
     }
 
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
