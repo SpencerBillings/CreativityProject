@@ -102,6 +102,22 @@ public class ArtCollectionViewController: UICollectionViewController
         
         return CGSize(width: widthPerItem, height: widthPerItem)
     }
+    
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets
+    {
+        return sectionInsets
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView,
+                               layout collectionViewLayout: UICollectionViewLayout,
+                               minimumLineSpacingForSectionAt section: Int) -> CGFloat
+    {
+        return sectionInsets.left
+    }
+    
+    
+    
+    
     // MARK: UICollectionViewDelegate
 
     /*
