@@ -37,15 +37,15 @@ public class ArtCollectionViewController: UICollectionViewController
     private let labels : [String] =
     {
         return [
-            "artEarth",
-            "artColossus",
-            "artHaikuIBM",
-            "artHaikuJava",
-            "artHaikuSwift",
-            "artKanaWave",
-            "artMedHacking",
-            "artOctocat",
-            "artSwiftArt"
+            "Blue Marble",
+            "Shadow of the Colossus",
+            "IBM Master the Mainframe Haiku",
+            "Java Haiku",
+            "Swift Haiku",
+            "Great Wave off Kanagawa",
+            "Medical Device Hacking Meme",
+            "My Octokitty",
+            "Swift Art"
         ]
     }()
     
@@ -61,18 +61,18 @@ public class ArtCollectionViewController: UICollectionViewController
         // Do any additional setup after loading the view.
     }
     
-    /*
     // MARK: - Navigation
 
+    /*
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
     }
     */
-
+    
     // MARK: UICollectionViewDataSource
-
+    
     public override func numberOfSections(in collectionView: UICollectionView) -> Int
     {
         return 1
@@ -94,6 +94,29 @@ public class ArtCollectionViewController: UICollectionViewController
         return artCell
     }
 
+    // MARK: UICollectionViewDelegate
+    
+    public override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
+    {
+        let imageView = UIImageView(image: creativeCS[indexPath.row])
+        imageView.frame = self.view.frame
+        imageView.backgroundColor = .black
+        imageView.contentMode = .scaleAspectFit
+        imageView.isUserInteractionEnabled = true
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissFullscreenImage))
+        imageView.addGestureRecognizer(tap)
+        
+        self.view.addSubview(imageView)
+    }
+    
+    // Use to go back from fullscreen mode
+    @objc
+    private func dismissFullscreenImage(_ sender: UITapGestureRecognizer)
+    {
+        sender.view?.removeFromSuperview()
+    }
+    
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
     {
         let paddingSpace = sectionInsets.left * (itemsPerRowCompact + 1)
@@ -114,11 +137,6 @@ public class ArtCollectionViewController: UICollectionViewController
     {
         return sectionInsets.left
     }
-    
-    
-    
-    
-    // MARK: UICollectionViewDelegate
 
     /*
     // Uncomment this method to specify if the specified item should be highlighted during tracking
