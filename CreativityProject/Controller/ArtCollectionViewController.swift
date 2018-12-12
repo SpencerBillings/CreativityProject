@@ -58,7 +58,7 @@ public class ArtCollectionViewController: UICollectionViewController
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
-        // Do any additional setup after loading the view.
+        ///Users/sbil1824/Documents/Swift Projects/CreativityProject/CreativityProject/View/Base.lproj/Main.storyboard Do any additional setup after loading the view.
     }
     
     // MARK: - Navigation
